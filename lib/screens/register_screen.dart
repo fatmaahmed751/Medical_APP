@@ -157,7 +157,7 @@ class RegisterScreen extends StatelessWidget {
                 function:(){
                   Navigator.push(context, MaterialPageRoute(builder:(context)=>const DiagnosisScreen()));
                 },
-              color: Color(0xff8D72E1),
+              color: Color(0xff8D72E1), textColor:Colors.white,
             ),
           ],
         ),

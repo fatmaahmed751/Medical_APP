@@ -27,6 +27,7 @@ Widget defaultButton({
   required String text,
   required Function function,
   required Color color,
+  required Color textColor,
 }) =>
     Container(
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -46,7 +47,7 @@ Widget defaultButton({
         child: Text(
           text,
           style: TextStyle(
-              color: Colors.white, fontSize: 17, fontWeight: FontWeight.w400),
+              color: textColor, fontSize: 17, fontWeight: FontWeight.w400),
         ),
       ),
     );
@@ -55,21 +56,19 @@ Widget infoButton(
         {required String text,
         required Function function,
         required Color color}) =>
+
     Container(
       width: 374,
-      height: 130,
+      height: 110,
+      padding: EdgeInsets.all(8),
       decoration: BoxDecoration(color: color,
           borderRadius: BorderRadius.only(
        bottomLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
      )
       ),
 
       child: TextButton(
-        style: ButtonStyle(
-
-            //backgroundColor: Color.fromRGBO(141, 158, 255)
-
-            ),
         onPressed: () {
           function();
         },
@@ -80,3 +79,44 @@ Widget infoButton(
         ),
       ),
     );
+
+Widget appText({
+  required String text,
+})=>Container(
+  width:228 ,
+  height:60,
+  decoration: BoxDecoration(
+      border: Border.all(
+        width:1,color:Color(0xff5B63B0),
+      ),
+borderRadius: BorderRadius.circular(27)
+  ),
+
+  child: TextButton(onPressed:(){},
+    child: Text(
+      text,
+      style: TextStyle(
+        color: Color(0xff5B63B0),
+        fontWeight:FontWeight.bold,
+        fontSize: 26,
+      ),),
+    ),
+
+);
+
+Widget secondText({
+  required String text,
+  required Color color,
+ required TextAlign textAlign,
+  FontWeight? fontWeight,
+  double? fontSize,
+})=>Container(
+  width:314 ,
+  child: Text(text,
+  textAlign:textAlign ,
+  style: TextStyle(
+    color: color,
+fontWeight: fontWeight,
+    fontSize: fontSize,
+  ),),
+);

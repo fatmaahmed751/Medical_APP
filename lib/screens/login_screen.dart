@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/app_localization.dart';
 import 'package:medical_app/components/componenets.dart';
+import 'package:medical_app/screens/diagnosis_screen.dart';
 import 'package:medical_app/screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -76,16 +77,16 @@ class LoginScreen extends StatelessWidget {
                   defaultFormField(
                       hitText: 'كلمة السر',
                       controller:passwordController ,
-                      type:TextInputType.text ),
+                      type:TextInputType.visiblePassword ),
             ],
           ),
         ),
             SizedBox(height: 3,),
             defaultButton(text: 'الاستمرار',
               function:(){
-              Navigator.push(context, MaterialPageRoute(builder:(context)=>const RegisterScreen()));
+              Navigator.push(context, MaterialPageRoute(builder:(context)=>const DiagnosisScreen()));
               },
-              color: Color(0xff8D72E1),
+              color: Color(0xff8D72E1), textColor:Colors.white ,
             ),
 
     ],
